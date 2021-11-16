@@ -1,0 +1,148 @@
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.triangle {
+  width: min(305px, 80vw);
+  height: min(277px, 55vw);
+  margin-top: 7.6rem;
+
+  &.animate {
+    path {
+      stroke-dasharray: 100 800;
+      stroke-dashoffset: 1000;
+      animation: lineMove 1s ease-out infinite;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .triangle {
+      width: 305px;
+      height: 277px;
+    }
+  }
+}
+
+.buttons {
+  position: relative;
+  width: 80%;
+  max-width: 30.5rem;
+  margin: auto;
+}
+
+.button {
+  position: absolute;
+  width: min(19rem, 35vw);
+  height: min(19rem, 35vw);
+  padding: min(2rem, 4vw);
+  cursor: pointer;
+  background: grey;
+  border-radius: 50%;
+  box-shadow: 0 .8rem 1px rgba(0, 0, 0, .6);
+  transition: .15s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.995);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, .2);
+  }
+
+  .icon {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 .8rem 1px rgba(0, 0, 0, .2) inset;
+
+    img {
+      height: min(7.2rem, 11vw);
+    }
+  }
+
+  &:first-of-type {
+    top: 1rem;
+    left: 0;
+    margin-left: max(-30%, -6vw);
+  }
+
+  &:nth-of-type(2) {
+    top: 1rem;
+    right: 0;
+    margin-right: max(-30%, -6vw);
+  }
+
+  &:nth-of-type(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: max(-30%, -8vw);
+
+    &:hover {
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    &:active {
+      transform: translateX(-50%) scale(.995);
+    }
+  }
+
+  &.rock {
+    background-image: linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    box-shadow: 0 .8rem 0 #9E153488;
+  }
+
+  &.scissors {
+    background-image: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    box-shadow: 0 .8rem 0 #EA9E1488;
+  }
+
+  &.paper {
+    background-image: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    box-shadow: 0 .8rem 0 #2743C088;
+  }
+
+  @media screen and (min-width: 520px) {
+
+    &:first-of-type {
+      margin-left: -27%;
+    }
+
+    &:nth-of-type(2) {
+      top: 0;
+      right: 0;
+      margin-right: -27%;
+
+    }
+
+    &:nth-of-type(3) {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: -27%;
+
+      &:hover {
+        transform: translateX(-50%) scale(1.05);
+      }
+
+      &:active {
+        transform: translateX(-50%) scale(.995);
+      }
+    }
+  }
+}
+
+@keyframes lineMove {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
