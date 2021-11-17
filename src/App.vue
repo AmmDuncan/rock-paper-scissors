@@ -83,7 +83,7 @@ body {
 
 .fadeIn-enter, .fadeIn-leave-to {
   opacity: 0;
-  transform: translateY(-.8rem) translateZ(0);
+  transform: translateY(-1.2rem) translateZ(0);
   //line-height: 0;
 }
 
