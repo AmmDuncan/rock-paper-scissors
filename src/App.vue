@@ -71,17 +71,20 @@ body {
 // transitions
    .fadeIn-enter-active {
      transition: .15s linear;
-     line-height: 1
+     //line-height: 1
+     opacity: 1;
    }
 
 .fadeIn-leave-active {
   transition: .15s ease-in;
-  line-height: 1
+  //line-height: 1
+  opacity: 1;
 }
 
 .fadeIn-enter, .fadeIn-leave-to {
   opacity: 0;
-  line-height: 0;
+  transform: translateY(-.8rem) translateZ(0);
+  //line-height: 0;
 }
 
 
