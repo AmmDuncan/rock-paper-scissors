@@ -130,7 +130,7 @@ h2 {
   letter-spacing: 0.04em;
 
   @media screen and (max-width: 768px) {
-    margin-top: 3.2rem;
+    margin-top: 2.4rem;
     font-size: max(1.4rem, 3.75vw);
     letter-spacing: 0.05em;
   }
@@ -161,6 +161,13 @@ h2 {
         font-weight: 600;
         letter-spacing: -0.03em;
         text-transform: uppercase;
+
+        @media screen and (max-width: 767px) {
+          height: 7.2rem;
+          font-size: 5.6rem;
+          margin-bottom: .8rem;
+          margin-top: .8rem;
+        }
       }
 
       .button {

@@ -34,7 +34,7 @@ export default {
 
     @media screen and (max-width: 767px) {
       grid: 8rem / min(30vw, 15.8rem) min(22vw, 15rem);
-      //margin: 0 0 4rem;
+      margin: 0 0 6.4rem;
       border-radius: .8rem;
       padding: 1.2rem 1.4rem 1.2rem 2rem;
     }
