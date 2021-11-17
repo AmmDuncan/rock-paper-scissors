@@ -1,0 +1,40 @@
+
+.triangle {
+  width: min(305px, 80vw);
+  height: min(277px, 55vw);
+  margin-top: 7.6rem;
+
+  &.animate {
+    path {
+      stroke-dasharray: 100 800;
+      stroke-dashoffset: 1000;
+      animation: lineMove 1s ease-out infinite;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .triangle {
+      width: 305px;
+      height: 277px;
+    }
+  }
+}
+
+.buttons {
+  position: relative;
+  width: 80%;
+  max-width: 30.5rem;
+  min-height: min(35.6rem, 40vw);
+  margin: auto;
+}
+
+@keyframes lineMove {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+
