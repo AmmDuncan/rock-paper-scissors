@@ -242,7 +242,6 @@ h2 {
 
   @media screen and (max-width: 767px) {
     flex-flow: column-reverse;
-
   }
 
   & > *:nth-child(2), .house-choice {
@@ -279,8 +278,8 @@ h2 {
     .bg, &::before, &::after {
       position: absolute;
       z-index: 0;
-      width: 240%;
-      height: 240%;
+      width: 220%;
+      height: 220%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) translateZ(0);
