@@ -47,8 +47,9 @@ body {
   /*text-align: center;*/
   color: white;
   background-image: radial-gradient(circle at 50% 0%, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 4.8rem;
+  padding-bottom: 14.4rem;
 
   @media screen and (max-width: 767px) {
     padding-top: 2.4rem;
@@ -105,12 +106,12 @@ body {
 .grow-leave-active {
   transition: .15s linear;
   line-height: 1;
-  transform: scale(1);
+  transform: scale(1) translateZ(0);
 }
 
 .grow-enter, .grow-leave-to {
   opacity: 0;
   line-height: 0;
-  transform: scale(0);
+  transform: scale(0) translateZ(0);
 }
 </style>

@@ -11,7 +11,7 @@
         </transition>
       </div>
     </div>
-    <transition name="fadeInSlow" :duration="1000">
+    <transition name="fadeInSlow" :duration="1300">
       <div v-if="roundWinner" class="result">
         <h1 class="winner">
           {{ winner }}
@@ -80,14 +80,13 @@ export default {
           scissors: 0
         }
       }
-      console.log(user, house)
-      window.rankings = powerRankings
       return powerRankings[user.item][house.item]
     },
     ...mapActions(["houseChoose", "setRoundWinner", "resetGame", "incrementScore"])
   },
   watch: {
     houseChoice(val) {
+      setTimeout(()=> {
       if (val && this.userChoice) {
         const result = this.checkWinner(this.userChoice, val)
         let winner;
@@ -105,11 +104,11 @@ export default {
             winner = "draw";
         }
         this.setRoundWinner(winner)
-        console.log(winner)
         if (winner === "user") {
           this.incrementScore()
         }
       }
+      }, 800)
     }
   },
   mounted() {
@@ -117,7 +116,7 @@ export default {
       const index = Math.floor(Math.random() * 3);
       console.log(index)
       this.houseChoose(index)
-    }, 600)
+    }, 500)
   }
 }
 </script>
@@ -139,9 +138,22 @@ h2 {
 .container-sm {
   display: grid;
   grid: 1fr / 1fr 1fr;
-  column-gap: 7.2rem;
-  transition: .15s ease-out;
+  column-gap: 4rem;
+  transition: .2s ease-out;
   transform-origin: 0 0;
+
+  //.result {
+  //  transform: scale(0);
+  //}
+
+  .house-choice-wrapper {
+    grid-column: -2/-1;
+  }
+
+  //& > * {
+  //  //grid-row: 1/2;
+  //  border: 1px solid red;
+  //}
 
   &.roundEnd {
     grid: 1fr max-content / 1fr 1fr;
@@ -153,6 +165,7 @@ h2 {
       grid-row: 2/3;
       grid-column: 1/-1;
       width: 100%;
+      //transform: scale(1) translateZ(0);
 
       .winner {
         height: 8.8rem;
@@ -194,9 +207,12 @@ h2 {
       }
     }
 
+
+
     @media screen and (min-width: 768px) {
       grid: 1fr / 1fr max-content 1fr;
       align-items: center;
+      //column-gap: 4rem;
       max-width: 938px;
 
       & > * {
@@ -210,6 +226,10 @@ h2 {
     }
   }
 
+  @media screen and (min-width: 767px) {
+    grid: 1fr / 1fr 7.2rem 1fr;
+
+  }
   @media screen and (max-width: 767px) {
     column-gap: 4rem;
   }
@@ -227,11 +247,16 @@ h2 {
 
   & > *:nth-child(2), .house-choice {
     position: relative;
-    width: min(29.5rem, 35vw);
-    height: min(29.5rem, 35vw);
+    width: min(28rem, 27vw);
+    height: min(28rem, 27vw);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 767px) {
+      width: min(29.5rem, 30vw);
+      height: min(29.5rem, 30vw);
+    }
   }
 
 }

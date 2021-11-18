@@ -90,10 +90,10 @@ export default {
     width: 100%;
     height: 100%;
     margin: 0 !important;
-    padding: 3.6rem;
+    padding: 3.2rem;
 
-    @media screen and (max-width: 767px) {
-      padding: min(4vw, 2.8rem);
+    @media screen and (max-width: 992px) {
+      padding: min(3vw, 2.8rem);
     }
 
     &:hover, &:active {
@@ -121,7 +121,7 @@ export default {
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      margin-bottom: -27%;
+      margin-bottom: -24%;
 
       &:hover {
         transform: translateX(-50%) scale(1.05);
@@ -151,7 +151,7 @@ export default {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%) translateZ(0);
-    margin-bottom: max(-30%, -8vw);
+    margin-bottom: max(-30%, -7vw);
 
     &:hover {
       transform: translateX(-50%) scale(1.05);
