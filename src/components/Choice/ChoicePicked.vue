@@ -108,7 +108,7 @@ export default {
           this.incrementScore()
         }
       }
-      }, 800)
+      }, 500)
     }
   },
   mounted() {
