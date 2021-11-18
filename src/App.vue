@@ -18,7 +18,7 @@ import store from "./store"
 export default {
     name: 'App',
     router,
-  store,
+    store,
     components: {
       DefaultLayout
   }
@@ -71,13 +71,16 @@ body {
 
 // transitions
    .fadeIn-enter-active {
-     transition: .15s linear;
+     transition: opacity .15s linear,
+     transform .15s linear;
      //line-height: 1
      opacity: 1;
    }
 
 .fadeIn-leave-active {
-  transition: .15s ease-in;
+  transition:
+      opacity .15s ease-in,
+      transform .15s ease-in;
   //line-height: 1
   opacity: 1;
 }
@@ -104,7 +107,9 @@ body {
 
 .grow-enter-active,
 .grow-leave-active {
-  transition: .15s linear;
+  transition: opacity .15s linear,
+              transform .15s linear,
+              line-height .15s linear;
   line-height: 1;
   transform: scale(1) translateZ(0);
 }
